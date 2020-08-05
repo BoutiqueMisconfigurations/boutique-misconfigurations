@@ -1,0 +1,16 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+ name: allow-cart-and-frontend-comm
+ namespace: default
+spec:
+ selector:
+   matchLabels:
+     app: cartservice
+ rules:
+  - from:
+    - source:
+       principals: ["cluster.local/ns/default/sa/frontend-serviceaccount"]
+  - to:
+    - operation:
+       ports: ["7070"] # the port cartservice receives frontend traffic from

@@ -1,0 +1,26 @@
+# Copy-pasted from https://stackoverflow.com/questions/60877743/kubernetes-rbac-allowed-by-rolebinding-but-cannot-list-resource
+# and modified to work in this environment.
+# We assume based on OP's chosen answer that the objective was to given a ServiceAccount
+# read access to all pods in the cluster
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: kube-system-rbac-role
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: kube-system-rbac-role-binding
+  namespace: kube-system
+subjects:
+  - kind: User
+    name: boutique-sre
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: kube-system-rbac-role
+  apiGroup: rbac.authorization.k8s.io

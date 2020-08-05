@@ -1,0 +1,4 @@
+*.key
+*.csr
+cert-*.yaml
+certs/

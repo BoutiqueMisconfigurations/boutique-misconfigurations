@@ -1,0 +1,25 @@
+# this was copy-pasted from https://stackoverflow.com/questions/59465936/rbac-role-to-manage-single-pod-with-dynamic-name/59471112#59471112, with <deployment> replaced with adservice and <my-namespace> replaced with default. Also, <user> is replaced with boutique-sre (see ../README.md). Note, this is only the Role and RoleBinding with the wildcard bug! I omitted the first Role in the forum post because it works as expected. 
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  namespace: default 
+  name: dep-pods-manager-role
+rules:
+  - apiGroups: ["", "extensions", "apps"]
+    resources: ["pods"]
+    resourceNames: ["adservice*"]
+    verbs: ["get", "list", "watch", "update", "patch", "exec", "delete"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: dep-manager-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: boutique-sre 
+    apiGroup: ""
+roleRef:
+  kind: Role
+  name: dep-pods-manager-role
+  apiGroup: ""

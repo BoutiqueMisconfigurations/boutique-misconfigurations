@@ -1,0 +1,10 @@
+apiVersion: certificates.k8s.io/v1beta1
+kind: CertificateSigningRequest
+metadata:
+  name: payment-sre
+spec:
+  groups:
+  - system:authenticated
+  request: <the output of `cat payment-sre.csr | base64 | tr -d "\n"`>
+  usages:
+    - client auth

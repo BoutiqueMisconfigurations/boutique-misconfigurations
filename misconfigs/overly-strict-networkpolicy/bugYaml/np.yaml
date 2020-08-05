@@ -1,0 +1,21 @@
+# This NetworkPolicy was taken from https://stackoverflow.com/questions/47327554/kubernetes-networkpolicy-allow-loadbalancer and
+# updated to conform to an Istio service mesh instead of nginx. To do this, we juist needed to change the selector
+# for the policy to target the frontend-external load balancer (in an Istio mesh like this, that is usually the
+# istio-ingressgateway, hence the selector.
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: access-istio
+  namespace: istio-system
+spec:
+  podSelector:
+    matchLabels:
+      app: istio-ingressgateway
+  ingress:
+  - from:
+      - namespaceSelector:
+          matchLabels:
+            name: kube-system
+    ports:
+    - protocol: TCP
+      port: 80

@@ -1,0 +1,1 @@
+Each subdirectory of `misconfigs/` contains a small set of YAML files that are sufficient to replicate bugs found on the K8S/Istio discussion forums. To witness these misconfigurations, all one needs to do is apply the given YAMLs using either `kubectl` or `istioctl`.

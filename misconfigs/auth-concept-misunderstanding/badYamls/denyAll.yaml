@@ -1,0 +1,12 @@
+# a simplified DENY all spec, per https://istio.io/latest/docs/reference/config/security/authorization-policy/#AuthorizationPolicy-Action
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: payment-authorizationpolicy-default-deny-all
+spec:
+  action: DENY
+  selector:
+    matchLabels:
+     app: cartservice
+  rules:
+  - {}
