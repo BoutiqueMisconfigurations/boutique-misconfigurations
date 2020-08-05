@@ -107,5 +107,5 @@ All tests were written and tested using a 2019 MacBook Pro. Here are the detaile
 
 ## Structure
 This repo has the following sub-directories:
-- `microservices-demo/` contains a git submodule of the [source repository](https://github.com/GoogleCloudPlatform/microservices-demo/). All changes are explicitly stated in the files that were modified.
+- `microservices-demo/` contains a git submodule of our fork of GCP's [source repository](https://github.com/GoogleCloudPlatform/microservices-demo/). All changes are explicitly stated in the files that were modified, and the `README.md` contains a list of all changed files.
 - `misconfigs/` contains several nested directories, each containing a particular misconfiguration of the Online Boutique. Each subdirectory of `misconfigs/` contains a `README.md` that explains what bug that directory exposes.
