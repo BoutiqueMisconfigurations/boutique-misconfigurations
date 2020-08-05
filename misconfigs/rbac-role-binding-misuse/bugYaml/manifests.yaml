@@ -18,7 +18,7 @@ metadata:
   namespace: kube-system
 subjects:
   - kind: User
-    name: boutique-sre
+    name: admin-sre
     apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole

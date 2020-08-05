@@ -1,10 +1,10 @@
 apiVersion: certificates.k8s.io/v1beta1
 kind: CertificateSigningRequest
 metadata:
-  name: boutique-sre
+  name: admin
 spec:
   groups:
   - system:authenticated
-  request: <the output of `cat boutique-sre.csr | base64 | tr -d "\n"`>
+  request: <the output of `cat admin-sre.csr | base64 | tr -d "\n"`>
   usages:
     - client auth
