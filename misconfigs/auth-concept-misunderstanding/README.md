@@ -1,12 +1,9 @@
-#improperly-specified-authpolicy-yaml
+# auth-concept-misunderstanding 
 Based on the problem described in https://discuss.istio.io/t/how-make-authorizationpolicy-work/7193, this example 
 shows one of the two bugs. The first bug is a misunderstanding of the order of operations in Istio Authorization, caused by
 assuming that an explicit `ALLOW` policy would supercede a `DENY` policy. The second bug is a mistake in the YAML
 formatting, where even something as minor as an improper placement of a `-` in an Istio AuthorizationPolicy 
 can break reachability. This example will only showcse the first bug (see `../auth-stray-dash` for the second bug)
-
-The bug described by this user is due to the mistaken additional `-` before the `to` field, which
-acts as two separate rules instead of as one rule that has both `to` and `from` fields, as intended.
 
 ## Files
 - `bugYaml/ap.yaml`: contains the improper AuthorizationPolicy. It was copied from the post linked above,
