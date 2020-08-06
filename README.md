@@ -1,5 +1,5 @@
 # Boutique Misconfigurations
-This repository contains several Istio/K8S misconfigurations as applied to the GCP Online Boutique example. This repository allows users to examine common misconfigurations as applied to a familiar microservice example. 
+This repository contains several Istio/K8S misconfigurations as applied to the [GCP Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo). This repository allows users to examine common misconfigurations as applied to a familiar microservice example. 
 ## Installation: Setting Up the Service Mesh
 We will be following a mixture of the Option 2 Configuration for GKE detailed in `gcp-src/README.md` and with the Istio 1.6 installation [guide](https://istio.io/latest/docs/setup/getting-started/#install). Here is a step-by-step guide:
 
@@ -15,7 +15,7 @@ gcloud container clusters create demo --enable-autoupgrade \
     --enable-autoscaling --min-nodes=3 --max-nodes=10 --num-nodes=5 --zone=us-central1-a --enable-network-policy \
 --machine-type=n1-standard-4
 ```
-The `--machine-type` flag ensures that we will have enough CPU power to actually run the mesh, and the `--enable-network-policy` flag is needed to use NetworkPolicies.
+The `--machine-type` flag ensures that we will have enough CPU power to actually run the mesh, the `--enable-network-policy` flag is needed to use NetworkPolicies, and the `--machine-type` flag is to ensure there is enough CPU to run the whole mesh.
 
 ```
 kubectl get nodes
