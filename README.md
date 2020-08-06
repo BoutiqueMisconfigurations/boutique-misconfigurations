@@ -8,7 +8,7 @@ We will be following a mixture of the Option 2 Configuration for GKE detailed in
 gcloud services enable container.googleapis.com
 ```
 
-Next, run this command **instead of the create command in that README.`:**
+Next, run this command **instead of the create command in that README.:**
 
 ```
 gcloud container clusters create demo --enable-autoupgrade \                 
