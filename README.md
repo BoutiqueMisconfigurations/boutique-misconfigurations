@@ -1,5 +1,38 @@
 # Boutique Misconfigurations
 This repository contains several Istio/K8S misconfigurations as applied to the [GCP Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo). This repository allows users to examine common misconfigurations as applied to a familiar microservice example. 
+## Versioning
+We use the following versions:
+- [Istio 1.6.6](https://istio.io/latest/news/releases/1.6.x/announcing-1.6.6/)
+```
+$ istioctl version
+client version: 1.6.6
+control plane version: 1.6.6
+data plane version: 1.6.6 (65 proxies)
+```
+- [Kubernetes 1.18](https://kubernetes.io/docs/setup/release/notes/)
+```
+$ kubectl version -o yaml
+clientVersion:
+  buildDate: "2020-04-16T23:35:15Z"
+  compiler: gc
+  gitCommit: 52c56ce7a8272c798dbc29846288d7cd9fbae032
+  gitTreeState: clean
+  gitVersion: v1.18.2
+  goVersion: go1.14.2
+  major: "1"
+  minor: "18"
+  platform: darwin/amd64
+serverVersion:
+  buildDate: "2020-06-01T22:20:10Z"
+  compiler: gc
+  gitCommit: fb7add51f767aae42655d39972210dc1c5dbd4b3
+  gitTreeState: clean
+  gitVersion: v1.15.12-gke.2
+  goVersion: go1.12.17b4
+  major: "1"
+  minor: 15+
+  platform: linux/amd64
+```
 ## Installation: Setting Up the Service Mesh
 We will be following a mixture of the Option 2 Configuration for GKE detailed in `gcp-src/README.md` and with the Istio 1.6 installation [guide](https://istio.io/latest/docs/setup/getting-started/#install). Here is a step-by-step guide:
 
