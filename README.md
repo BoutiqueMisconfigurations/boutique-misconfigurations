@@ -10,13 +10,8 @@ https://cloud.google.com/kubernetes-engine/docs/quickstart)).
         - [Docker for Desktop (recommended for Mac/Windows)](https://www.docker.com/products/docker-desktop)
           - It provides Kubernetes support as [noted
      here](https://docs.docker.com/docker-for-mac/kubernetes/)
+          - **Ensure that docker daemon is running!**
    - [skaffold]( https://skaffold.dev/docs/install/) ([ensure version ≥v1.10](https://github.com/GoogleContainerTools/skaffold/releases))
-   - Enable GCP APIs for Cloud Monitoring, Tracing, Debugger:
-    ```
-    gcloud services enable monitoring.googleapis.com \
-      cloudtrace.googleapis.com \
-      clouddebugger.googleapis.com
-    ```
 
 ### Detailed Versioning Info
 We use the following versions:
