@@ -43,7 +43,7 @@ serverVersion:
   platform: linux/amd64
 ```
 ## Installation: Setting Up the Service Mesh
-We will be following a mixture of the Option 2 Configuration for GKE detailed in `gcp-src/README.md` and with the Istio 1.6 installation [guide](https://istio.io/latest/docs/setup/getting-started/#install). Here is a step-by-step guide:
+We will be following a mixture of the Option 2 Configuration for GKE detailed in `microservices-demo/README.md` and with the Istio 1.6 installation [guide](https://istio.io/latest/docs/setup/getting-started/#install). Here is a step-by-step guide:
 
 0) Clone this repo with `git clone https://github.com/BoutiqueMisconfigurations/boutique-misconfigurations.git --recursive`
 1) This step is similar to step 1 of Option 2 for GKE setup. Run these commands from the `gcp-src/` directory:
