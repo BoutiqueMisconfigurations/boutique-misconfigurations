@@ -2,11 +2,7 @@
 This repository contains several Istio/K8S misconfigurations as applied to the [GCP Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo). This repository allows users to examine common misconfigurations as applied to a familiar microservice example. 
 ## Prerequisites/Versioning
 ### Prerequisites
-If you have already configured GKE and Kubernetes/`kubectl`, you can ignore this section and move to Installation.
-
-Install the `gcloud` command line tool. 
-
-These prerequisites are from [GCP](https://github.com/BoutiqueMisconfigurations/microservices-demo/tree/3983672bef190fd51eb6388ffb9a710eae96a81e#prerequisites):
+These prerequisites are mostly from [GCP](https://github.com/BoutiqueMisconfigurations/microservices-demo/tree/3983672bef190fd51eb6388ffb9a710eae96a81e#prerequisites):
    - `gcloud` see [here](
 https://cloud.google.com/kubernetes-engine/docs/quickstart)).
    - kubectl (can be installed via `gcloud components install kubectl`)
