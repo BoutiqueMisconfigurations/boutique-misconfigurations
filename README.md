@@ -4,10 +4,23 @@ This repository contains several Istio/K8S misconfigurations as applied to the [
 ### Prerequisites
 If you have already configured GKE and Kubernetes/`kubectl`, you can ignore this section and move to Installation.
 
-To install Kubernetes/`kubectl`, follow the instructions located here: 
-https://cloud.google.com/kubernetes-engine/docs/quickstart for `local shell`.
+Install the `gcloud` command line tool. 
 
-Then, once you reach the "creating a GKE cluster step" you can follow the instructions in Installation, below.
+These prerequisites are from [GCP](https://github.com/BoutiqueMisconfigurations/microservices-demo/tree/3983672bef190fd51eb6388ffb9a710eae96a81e#prerequisites):
+   - `gcloud` see [here](
+https://cloud.google.com/kubernetes-engine/docs/quickstart)).
+   - kubectl (can be installed via `gcloud components install kubectl`)
+   - Local Kubernetes cluster deployment tool: (This demo has only been tested with Docker)
+        - [Docker for Desktop (recommended for Mac/Windows)](https://www.docker.com/products/docker-desktop)
+          - It provides Kubernetes support as [noted
+     here](https://docs.docker.com/docker-for-mac/kubernetes/)
+   - [skaffold]( https://skaffold.dev/docs/install/) ([ensure version ≥v1.10](https://github.com/GoogleContainerTools/skaffold/releases))
+   - Enable GCP APIs for Cloud Monitoring, Tracing, Debugger:
+    ```
+    gcloud services enable monitoring.googleapis.com \
+      cloudtrace.googleapis.com \
+      clouddebugger.googleapis.com
+    ```
 
 ### Detailed Versioning Info
 We use the following versions:
@@ -45,7 +58,7 @@ serverVersion:
 ## Installation: Setting Up the Service Mesh
 We will be following a mixture of the Option 2 Configuration for GKE detailed in `microservices-demo/README.md` and with the Istio 1.6 installation [guide](https://istio.io/latest/docs/setup/getting-started/#install). Here is a step-by-step guide:
 
-0) Clone this repo with `git clone https://github.com/BoutiqueMisconfigurations/boutique-misconfigurations.git --recursive`
+0) First, clone this repo with `git clone https://github.com/BoutiqueMisconfigurations/boutique-misconfigurations.git --recursive`. 
 1) This step is similar to step 1 of Option 2 for GKE setup. Run these commands from the `gcp-src/` directory:
 ```
 gcloud services enable container.googleapis.com
