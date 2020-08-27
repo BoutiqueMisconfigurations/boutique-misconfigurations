@@ -44,9 +44,7 @@ gcloud services enable container.googleapis.com
 Next, run this command **instead of the create command in that README.:**
 
 ```
-gcloud container clusters create demo --enable-autoupgrade \                 
-    --enable-autoscaling --min-nodes=3 --max-nodes=10 --num-nodes=5 --zone=us-central1-a --enable-network-policy \
---machine-type=n1-standard-4
+gcloud container clusters create demo --enable-autoupgrade --enable-autoscaling --min-nodes=3 --max-nodes=10 --num-nodes=5 --zone=us-central1-a --enable-network-policy --machine-type=n1-standard-4
 ```
 The `--machine-type` flag ensures that we will have enough CPU power to actually run the mesh, the `--enable-network-policy` flag is needed to use NetworkPolicies, and the `--machine-type` flag is to ensure there is enough CPU to run the whole mesh.
 
