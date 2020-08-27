@@ -1,6 +1,15 @@
 # Boutique Misconfigurations
 This repository contains several Istio/K8S misconfigurations as applied to the [GCP Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo). This repository allows users to examine common misconfigurations as applied to a familiar microservice example. 
-## Versioning
+## Prerequisites/Versioning
+### Prerequisites
+If you have already configured GKE and Kubernetes/`kubectl`, you can ignore this section and move to Installation.
+
+To install Kubernetes/`kubectl`, follow the instructions located here: 
+https://cloud.google.com/kubernetes-engine/docs/quickstart for `local shell`.
+
+Then, once you reach the "creating a GKE cluster step" you can follow the instructions in Installation, below.
+
+### Detailed Versioning Info
 We use the following versions:
 - [Istio 1.6.6](https://istio.io/latest/news/releases/1.6.x/announcing-1.6.6/)
 ```
